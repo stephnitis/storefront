@@ -8,9 +8,9 @@
 
 ### Packages:
 
-- redux
-- react-redux
-- redux-devtools-extension
-- npm install @mui/material @emotion/react @emotion/styled
+- [Redux](https://redux.js.org/)
+- [React Redux](https://react-redux.js.org/)
+- [Redux DevTools](https://github.com/reduxjs/redux-devtools/tree/main/extension)
+- [MUI Core](https://mui.com/core/)
 
 <!-- ![]() -->
