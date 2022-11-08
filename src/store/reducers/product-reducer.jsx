@@ -17,10 +17,10 @@ let initialState = {
   activeCategory: '',
 };
 
-function productReducer(state = initialState, action){
-  const {type, payload} = action;
+function productReducer(state = initialState, action) {
+  const { type, payload } = action;
 
-  switch(type){
+  switch (type) {
     // case 'category':
     // return {
     //   ...state,
@@ -39,11 +39,15 @@ function productReducer(state = initialState, action){
     case 'category':
       return {
         ...state,
-        products: state.products.filter(product => product.category === payload),
-        activeCategory: payload        
+        // products: state.products.filter(product => product.category === payload),
+        activeCategory: payload,
       }
+    
+    case 'reset':
+      return initialState;
+
     default:
-      return state;
+      return initialState;
   }
 }
 

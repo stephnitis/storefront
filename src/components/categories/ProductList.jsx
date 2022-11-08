@@ -2,10 +2,9 @@ import { connect } from 'react-redux';
 
 
 const List = (props) => {
+  console.log(props);
 
-  const {
-    products,
-  } = props;
+  const products = props.products.products.filter(product => product.category === props.products.activeCategory);
 
 
   return (
@@ -30,8 +29,7 @@ const List = (props) => {
 
 const mapStateToProps = ({ productReducer }) => {
   return {
-    products: productReducer.products,
-    category: productReducer.products.category,
+    products: productReducer
   }
 }
 
