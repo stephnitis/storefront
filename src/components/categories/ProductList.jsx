@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+// import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-
-
+import CardActions from '@mui/material/CardActions';
+import IconButton from '@mui/material/IconButton';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import Stack from '@mui/material/Stack';
 
 const List = (props) => {
   console.log(props);
@@ -18,19 +20,29 @@ const List = (props) => {
       {
         filteredProducts.map((products, index) => (
           <Card sx={{ maxWidth: 345 }} key={`products-${index}`}>
-            <CardActionArea>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {products.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  ${products.price}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Quantity In Stock: {products.inventory}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
+
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {products.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                ${products.price}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Quantity In Stock: {products.inventory}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Stack direction="row" spacing={1}>
+                <IconButton color="primary" aria-label="add to shopping cart">
+                  <ShoppingCartIcon />
+                </IconButton>
+                <IconButton aria-label="delete">
+                  <DeleteOutlineIcon />
+                </IconButton>
+              </Stack>
+            </CardActions>
+
           </Card>
         ))
       }
