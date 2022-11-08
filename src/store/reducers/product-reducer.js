@@ -1,9 +1,4 @@
 let initialState = {
-  categories: [
-    { name: 'electronics', displayName: 'ELECTRONICS' },
-    { name: 'food', displayName: 'FOOD' },
-    { name: 'clothing', displayName: 'CLOTHING' },
-  ],
 
   products: [
     { name: 'TV', category: 'electronics', price: 699.00, inventory: 5 },
@@ -23,8 +18,9 @@ function productReducer(state = initialState, action) {
   switch (type) {
 
     case 'category':
-      return {
+      return  {
         ...state,
+        products: state.products.filter(product => product.category === payload),
         activeCategory: payload,
       }
     

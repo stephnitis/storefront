@@ -10,3 +10,4 @@ let reducers = combineReducers({
 export default function store(){
   return createStore(reducers, composeWithDevTools())
 }
+

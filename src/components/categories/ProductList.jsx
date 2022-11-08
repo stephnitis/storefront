@@ -12,13 +12,12 @@ import Stack from '@mui/material/Stack';
 const List = (props) => {
   console.log(props);
 
-  const filteredProducts = props.list.products.filter(product => product.category === props.list.activeCategory);
-
+  // const filteredProducts = props.list.products.filter(product => product.category === props.list.activeCategory);
 
   return (
     <>
       {
-        filteredProducts.map((products, index) => (
+        props.list.products.map((products, index) => (
           <Card  sx={{ maxWidth: 345 }} key={`products-${index}`}>
 
             <CardContent>
