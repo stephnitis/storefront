@@ -14,39 +14,47 @@ let initialState = {
     { name: 'Eggs', category: 'food', price: 1.99, inventory: 12 },
     { name: 'Bread', category: 'food', price: 2.39, inventory: 90 },
   ],
-  activeCategory: ''
+  activeCategory: '',
 };
 
-function productsList(state = initialState, action){
+function productReducer(state = initialState, action){
   const {type, payload} = action;
 
   switch(type){
-    case 'category':
-    return {
-      ...state,
-      products: state.products.map(product => {
-        if(product.category === payload.name){
-          return {
-            name: product.name,
-            price: product.price,
-            activeCategory: payload
-          }
-        }
-        return product;
-      })
-    }
+    // case 'category':
+    // return {
+    //   ...state,
+    //   products: state.products.map(product => {
+    //     if(product.category === payload){
+    //       return {
+    //         name: product.name,
+    //         price: product.price,
+    //         activeCategory: payload,
+    //       }
+    //     }
+    //     return product;
+    //   })
+    // }
 
+    case 'category':
+      return {
+        ...state,
+        return: {
+          products: 
+          state.products.filter(product => product.category === payload),
+          activeCategory: payload
+        }
+      }
     default:
       return state;
   }
-
 }
 
-export const filterElectronics = (category) => {
+export const filterCategory = (activeCategory) => {
   return {
-    type: category,
-    payload: 'electronics',
+    type: 'category',
+    payload: activeCategory,
   }
 }
 
-export default productsList;
+export default productReducer;
