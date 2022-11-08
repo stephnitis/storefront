@@ -6,9 +6,7 @@ import { connect } from 'react-redux';
 
 const Categories = (props) => {
 
-  const {
-    filterCategory,
-  } = props;
+  const {filterCategory} = props;
 
   return (
     <>
@@ -24,7 +22,7 @@ const Categories = (props) => {
 
 const mapStateToProps = ({ productReducer }) => {
   return {
-    products: productReducer.products,
+    list: productReducer,
     categories: productReducer.categories,
   }
 }
