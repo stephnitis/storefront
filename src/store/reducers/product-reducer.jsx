@@ -1,8 +1,8 @@
 let initialState = {
   categories: [
-    { name: 'electronics', displayName: 'Electronics' },
-    { name: 'food', displayName: 'Food' },
-    { name: 'clothing', displayName: 'Clothing' },
+    { name: 'electronics', displayName: 'ELECTRONICS' },
+    { name: 'food', displayName: 'FOOD' },
+    { name: 'clothing', displayName: 'CLOTHING' },
   ],
 
   products: [
@@ -21,25 +21,10 @@ function productReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    // case 'category':
-    // return {
-    //   ...state,
-    //   products: state.products.map(product => {
-    //     if(product.category === payload){
-    //       return {
-    //         name: product.name,
-    //         price: product.price,
-    //         activeCategory: payload,
-    //       }
-    //     }
-    //     return product;
-    //   })
-    // }
 
     case 'category':
       return {
         ...state,
-        // products: state.products.filter(product => product.category === payload),
         activeCategory: payload,
       }
     
@@ -48,6 +33,7 @@ function productReducer(state = initialState, action) {
 
     default:
       return initialState;
+      
   }
 }
 

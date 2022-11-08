@@ -1,28 +1,39 @@
 import { connect } from 'react-redux';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
+
 
 
 const List = (props) => {
   console.log(props);
 
-  const products = props.list.products.filter(product => product.category === props.list.activeCategory);
+  const filteredProducts = props.list.products.filter(product => product.category === props.list.activeCategory);
 
 
   return (
     <>
-        <section >
-          {
-            products.map((products, index) => (
-              <div key={`products-${index}`}>
-
-                <ul>
-                  <li>{products.name}</li>
-                  <li>{products.price}</li>
-                  <li>{products.inventory}</li>
-                </ul>
-              </div>
-            ))
-          }
-        </section>
+      {
+        filteredProducts.map((products, index) => (
+          <Card sx={{ maxWidth: 345 }} key={`products-${index}`}>
+            <CardActionArea>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {products.name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  ${products.price}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Quantity In Stock: {products.inventory}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        ))
+      }
     </>
   )
 }
@@ -38,3 +49,7 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);
+
+
+
+

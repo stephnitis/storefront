@@ -16,7 +16,6 @@ const Header = () => {
           </Typography>
           <Button color="inherit">CART</Button>
           </Toolbar>
-
         </AppBar>
       </Box>
     </>
