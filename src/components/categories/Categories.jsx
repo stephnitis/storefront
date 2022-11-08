@@ -26,7 +26,6 @@ const mapStateToProps = ({ productReducer }) => {
   return {
     products: productReducer.products,
     category: productReducer.products.category,
-    showProducts: productReducer.showProducts
   }
 }
 

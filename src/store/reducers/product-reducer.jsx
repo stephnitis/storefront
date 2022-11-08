@@ -39,11 +39,8 @@ function productReducer(state = initialState, action){
     case 'category':
       return {
         ...state,
-        return: {
-          products: 
-          state.products.filter(product => product.category === payload),
-          activeCategory: payload
-        }
+        products: state.products.filter(product => product.category === payload),
+        activeCategory: payload        
       }
     default:
       return state;
