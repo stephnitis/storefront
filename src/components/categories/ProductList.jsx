@@ -19,7 +19,7 @@ const List = (props) => {
     <>
       {
         filteredProducts.map((products, index) => (
-          <Card sx={{ maxWidth: 345 }} key={`products-${index}`}>
+          <Card  sx={{ maxWidth: 345 }} key={`products-${index}`}>
 
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
