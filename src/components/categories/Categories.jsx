@@ -18,8 +18,6 @@ const Categories = (props) => {
       props.categories.map((category, index) => (
       <ButtonGroup key={`category-${index}`} variant="text" aria-label="text button group">
         <Button onClick={() => filterCategory(category.name)}>{category.displayName}</Button>
-        {/* <Button onClick={() => filterCategory('clothing')}>Clothing</Button>
-        <Button onClick={() => filterCategory('electronics')}>Electronics</Button> */}
       </ButtonGroup>
       ))
     }
