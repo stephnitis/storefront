@@ -14,20 +14,24 @@ const Categories = (props) => {
       <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
         Browse our Categories
       </Typography>
-      <ButtonGroup variant="text" aria-label="text button group">
-        <Button onClick={() => filterCategory('food')}>Food</Button>
-        <Button onClick={() => filterCategory('clothing')}>Clothing</Button>
-        <Button onClick={() => filterCategory('electronics')}>Electronics</Button>
+    {
+      props.categories.map((category, index) => (
+      <ButtonGroup key={`category-${index}`} variant="text" aria-label="text button group">
+        <Button onClick={() => filterCategory(category.name)}>{category.displayName}</Button>
+        {/* <Button onClick={() => filterCategory('clothing')}>Clothing</Button>
+        <Button onClick={() => filterCategory('electronics')}>Electronics</Button> */}
       </ButtonGroup>
+      ))
+    }
     </>
 
   )
 }
 
-const mapStateToProps = ({ productReducer }) => {
+const mapStateToProps = ({ productReducer, categoryReducer }) => {
   return {
     products: productReducer.products,
-    categories: productReducer.categories,
+    categories: categoryReducer.categories,
   }
 }
 

@@ -12,8 +12,6 @@ import Stack from '@mui/material/Stack';
 const List = (props) => {
   console.log(props);
 
-  // const filteredProducts = props.list.products.filter(product => product.category === props.list.activeCategory);
-
   return (
     <>
       {
