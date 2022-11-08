@@ -8,7 +8,17 @@
 
 ![uml lab36](./assets/lab36.png)
 
-### Packages:
+### Functionality
+
+- Redux Store houses initial state & presently hardcoded data set
+  - This data object includes an array where individual products are assigned to a broader category
+- Our Categories Component is home to buttons that use a filter category action to set state
+  - Once this specific action is dispatched, it sets an active category within our reducer
+- Once state is set, our List Component filters through the products and displays those the correspond based upon active category
+- List items are rendered on a card via Material UI
+  - Each card displayd the product name, price and quantity in inventory
+
+### Dependencies
 
 - [Redux](https://redux.js.org/)
 - [React Redux](https://react-redux.js.org/)
