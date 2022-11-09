@@ -8,11 +8,13 @@ import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import InfoIcon from '@mui/icons-material/Info';
 import Stack from '@mui/material/Stack';
 
 const List = (props) => {
   console.log(props);
+
+  const { addItemToCart } = props;
 
   return (
     <>
@@ -34,14 +36,14 @@ const List = (props) => {
             <CardActions>
               <Stack direction="row" spacing={1}>
                 <IconButton 
-                onClick={() => props.addItemToCart(product.name)}
+                onClick={() => addItemToCart(product.name)}
                 color="primary" 
                 aria-label="add to shopping cart"
                 >
                   <ShoppingCartIcon />
                 </IconButton>
                 <IconButton aria-label="delete">
-                  <DeleteOutlineIcon />
+                  <InfoIcon />
                 </IconButton>
               </Stack>
             </CardActions>
@@ -57,8 +59,6 @@ const mapStateToProps = ({ productReducer, cartReducer }) => {
   return {
     list: productReducer,
     cart: cartReducer,
-    // quantityInCart: cartReducer.quantityInCart,
-    // itemsToPurchase: cartReducer.itemsToPurchase
   }
 }
 

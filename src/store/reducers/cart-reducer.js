@@ -5,8 +5,6 @@ const initialState = {
 
 function cartReducer(state = initialState, action) {
   const { type, payload } = action;
-  console.log(payload);
-  console.log(state);
   switch (type) {
 
     case 'add':
@@ -16,16 +14,11 @@ function cartReducer(state = initialState, action) {
       }
       return cart;
 
-
-
     case 'remove':
       return {
-        itemsToPurchase: {}
-      }
-
-    case 'view':
-      return {
-        itemsToPurchase: {}
+        ...state,
+        itemsToPurchase: state.itemsToPurchase.filter(product => product !== payload),
+        quantityInCart: state.quantityInCart - 1,
       }
         
     case 'reset':
