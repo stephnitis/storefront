@@ -19,7 +19,7 @@ const List = (props) => {
   return (
     <>
       {
-        props.list.products.map((product, index) => (
+        props.list.map((product, index) => (
           <Card  sx={{ maxWidth: 345 }} key={`product-${index}`}>
 
             <CardContent>
@@ -56,7 +56,7 @@ const List = (props) => {
 
 const mapStateToProps = ({ productReducer, cartReducer }) => {
   return {
-    list: productReducer,
+    list: productReducer.products,
     cart: cartReducer,
   }
 }

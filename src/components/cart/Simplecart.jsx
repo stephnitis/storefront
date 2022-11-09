@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { removeItemFromCart } from '../../store/reducers/cart-reducer';
 import React from 'react';
 
@@ -17,7 +17,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const SimpleCart = (props) => {
 
-  const { removeItemFromCart, quantity } = props;
+  const { removeItemFromCart } = props;
+  let itemsToPurchase = useSelector(state => state.cartReducer.itemsToPurchase)
 
   const [open, setOpen] = React.useState(true);
 
@@ -46,7 +47,7 @@ const SimpleCart = (props) => {
           </ListItemIcon>
 
           <ListItemText
-            primary={quantity} />
+            primary={itemsToPurchase.length} />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
 

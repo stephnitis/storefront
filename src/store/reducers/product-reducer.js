@@ -24,17 +24,19 @@ function productReducer(state = initialState, action) {
         activeCategory: payload,
       }
 
-    // case 'add-to-cart':
-    //   return {
-    //     products: state.products.filter(product => product.name === action.payload.name)
-    //   }
+    case 'add-to-cart':
+      let products = [...state.products];
+      console.log(products);
+      let newProducts = products.map(product => product.name === payload.name ? {...product, inventory: product.inventory -= 1} : product)
+      return {...state, products: newProducts};
+
               
     
     case 'reset':
-      return initialState;
+      return state;
 
     default:
-      return initialState;
+      return state;
       
   }
 }
