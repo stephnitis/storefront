@@ -18,7 +18,11 @@
 - List items are rendered on a card via Material UI
   - Each card displayd the product name, price and quantity in inventory
 
+## Phase Two
+
 ### Branch: combined-reducers
+
+![uml lab 37](./assets/lab37.png)
 
 ### Dependencies
 

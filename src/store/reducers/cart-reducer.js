@@ -7,7 +7,13 @@ function cartReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
 
-    case 'add':
+    // case 'add':
+    //   if(state.itemsToPurchase.includes(payload)){
+    //   }else{
+    //     return 
+    //   };
+
+      case 'add':
       let cart = {
         itemsToPurchase: [...state.itemsToPurchase, payload],
         quantityInCart: state.quantityInCart + 1,
