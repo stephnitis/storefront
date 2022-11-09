@@ -36,7 +36,7 @@ const List = (props) => {
             <CardActions>
               <Stack direction="row" spacing={1}>
                 <IconButton 
-                onClick={() => addItemToCart(product.name)}
+                onClick={() => addItemToCart(product)}
                 color="primary" 
                 aria-label="add to shopping cart"
                 >
@@ -47,7 +47,6 @@ const List = (props) => {
                 </IconButton>
               </Stack>
             </CardActions>
-
           </Card>
         ))
       }

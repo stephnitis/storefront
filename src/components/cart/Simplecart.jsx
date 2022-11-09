@@ -28,16 +28,16 @@ const SimpleCart = (props) => {
   return (
     <>
       <List
-        sx={{ 
-        width: '100%', 
-        maxWidth: 360, 
-        // bgcolor: 'background.paper' 
+        sx={{
+          width: '100%',
+          maxWidth: 360,
+          // bgcolor: 'background.paper' 
         }}
         component="nav"
         aria-labelledby="nested-list-subheader"
         subheader={
-        <ListSubheader component="div" id="nested-list-subheader"></ListSubheader>
-      }
+          <ListSubheader component="div" id="nested-list-subheader"></ListSubheader>
+        }
       >
 
         <ListItemButton onClick={handleClick}>
@@ -46,22 +46,22 @@ const SimpleCart = (props) => {
           </ListItemIcon>
 
           <ListItemText
-            primary={quantity}/>
-            {open ? <ExpandLess /> : <ExpandMore />}
+            primary={quantity} />
+          {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
 
         <Collapse in={open} timeout="auto" unmountOnExit>
           {
             props.cart.itemsToPurchase.map((item, index) => (
 
-          <List key={`item-${index}`} component="div" disablePadding>
-            <ListItemButton onClick={() => removeItemFromCart(item)} aria-label="delete" sx={{ pl: 4 }}>
-              <ListItemText primary={item} />
-              <ListItemIcon >
-                <DeleteOutlineIcon />
-              </ListItemIcon>
-            </ListItemButton>
-          </List>
+              <List key={`item-${index}`} component="div" disablePadding>
+                <ListItemButton onClick={() => removeItemFromCart(item)} aria-label="delete" sx={{ pl: 4 }}>
+                  <ListItemText primary={item.name} />
+                  <ListItemIcon >
+                    <DeleteOutlineIcon />
+                  </ListItemIcon>
+                </ListItemButton>
+              </List>
             ))
 
           }
