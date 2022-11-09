@@ -7,13 +7,7 @@ function cartReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
 
-    // case 'add':
-    //   if(state.itemsToPurchase.includes(payload)){
-    //   }else{
-    //     return 
-    //   };
-
-      case 'add':
+      case 'add-to-cart':
       let cart = {
         itemsToPurchase: [...state.itemsToPurchase, payload],
         quantityInCart: state.quantityInCart + 1,
@@ -38,7 +32,7 @@ function cartReducer(state = initialState, action) {
 
 export const addItemToCart = (product) => {
   return {
-    type: 'add',
+    type: 'add-to-cart',
     payload: product,
   }
 }

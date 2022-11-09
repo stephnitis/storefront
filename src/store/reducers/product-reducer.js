@@ -24,11 +24,10 @@ function productReducer(state = initialState, action) {
         activeCategory: payload,
       }
 
-    case 'decrement-inventory':
-      return state.map(product =>
-        product.name === payload.name ?
-        {name: product.name, category: product.category, price: product.price, inventory: product.inventory -1 } :
-        product);
+    // case 'add-to-cart':
+    //   return {
+    //     products: state.products.filter(product => product.name === action.payload.name)
+    //   }
               
     
     case 'reset':
@@ -47,9 +46,9 @@ export const filterCategory = (activeCategory) => {
   }
 }
 
-export const decrementInventory = (product) => {
+export const addItemToCart = (product) => {
   return {
-    type: 'decrement-inventory',
+    type: 'add-to-cart',
     payload: product,
   }
 }
