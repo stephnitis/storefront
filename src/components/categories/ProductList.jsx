@@ -15,6 +15,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import Stack from '@mui/material/Stack';
 
 const List = (props) => {
+  console.log(props);
 
   let dispatch = useDispatch();
 
@@ -38,7 +39,7 @@ const List = (props) => {
                 ${product.price}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Quantity In Stock: {product.inventory}
+                Quantity In Stock: {product.inStock}
               </Typography>
             </CardContent>
             <CardActions>

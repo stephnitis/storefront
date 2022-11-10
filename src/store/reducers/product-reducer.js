@@ -32,10 +32,15 @@ function productReducer(state = initialState, action) {
         products: action.payload,
       }
 
-    case 'add-to-cart':
-      let products = [...state.products];
-      let newProducts = products.map(product => product.name === payload.name ? {...product, inventory: product.inventory -= 1} : product)
-      return {...state, products: newProducts};
+    // case 'add-to-cart':
+    //   let products = [...state.products];
+    //   let newProducts = products.map(product => product.name === payload.name ? {...product, inventory: product.inventory -= 1} : product)
+    //   return {...state, products: newProducts};
+
+      case 'add-to-cart':
+        let products = [...state.products];
+        let newProducts = products.map(product => product._id === payload._id ? {...product, inStock: product.inStock -= 1} : product)
+        return {...state, products: newProducts};
     
     case 'remove-from-cart':
       let productInventory = [...state.products];
@@ -62,6 +67,21 @@ export const setProducts = data => {
     type: 'get_products',
     payload: data,
   }
+}
+
+export const updateInventory = () => async (dispatch, getState) => {
+    let id = getState.list._id;
+    console.log('ID ------->', id);
+    let url =  `https://api-js401.herokuapp.com/api/v1/products/${id}`
+    let update = await axios.put(url, id)
+    dispatch(putProducts(update));
+}
+
+export const putProducts = id => {
+  return{
+    type: 'add-to-cart',
+    payload: id,
+  } 
 }
 
 export const filterCategory = (activeCategory) => {
