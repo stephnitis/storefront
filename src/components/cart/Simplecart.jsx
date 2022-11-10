@@ -2,7 +2,6 @@ import { connect, useSelector } from 'react-redux';
 import { removeItemFromCart } from '../../store/reducers/cart-reducer';
 import React from 'react';
 
-// import IconButton from '@mui/material/IconButton';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 import ListSubheader from '@mui/material/ListSubheader';
@@ -67,13 +66,8 @@ const SimpleCart = (props) => {
 
           }
         </Collapse>
-
       </List>
 
-
-      {/* <IconButton onClick={() => removeItemFromCart} aria-label="delete">
-        <DeleteOutlineIcon />
-      </IconButton> */}
     </>
   )
 }

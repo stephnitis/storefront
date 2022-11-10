@@ -21,7 +21,7 @@ function cartReducer(state = initialState, action) {
       }
       return cart;
 
-    case 'remove':
+    case 'remove-from-cart':
       return {
         ...state,
         itemsToPurchase: state.itemsToPurchase.filter(product => product !== payload),
@@ -45,7 +45,7 @@ export const addItemToCart = (product) => {
 
 export const removeItemFromCart = (product) => {
   return {
-    type: 'remove',
+    type: 'remove-from-cart',
     payload: product,
   }
 }

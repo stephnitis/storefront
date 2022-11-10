@@ -12,7 +12,6 @@ import InfoIcon from '@mui/icons-material/Info';
 import Stack from '@mui/material/Stack';
 
 const List = (props) => {
-  console.log(props);
 
   const { addItemToCart } = props;
 

@@ -26,11 +26,20 @@ function productReducer(state = initialState, action) {
 
     case 'add-to-cart':
       let products = [...state.products];
-      console.log(products);
       let newProducts = products.map(product => product.name === payload.name ? {...product, inventory: product.inventory -= 1} : product)
       return {...state, products: newProducts};
 
-              
+    // case 'remove':
+    //   return {
+    //     ...state,
+    //     itemsToPurchase: state.itemsToPurchase.filter(product => product !== payload),
+    //   }
+    
+    case 'remove-from-cart':
+      let productInventory = [...state.products];
+      let newInventory = productInventory.map(product => product.name === payload.name ? {...product, inventory: product.inventory += 1} : product)
+      console.log('inventory ------>', newInventory);
+      return {...state, products: newInventory};
     
     case 'reset':
       return state;
@@ -51,6 +60,13 @@ export const filterCategory = (activeCategory) => {
 export const addItemToCart = (product) => {
   return {
     type: 'add-to-cart',
+    payload: product,
+  }
+}
+
+export const removeItemFromCart = (product) => {
+  return {
+    type: 'remove-from-cart',
     payload: product,
   }
 }
