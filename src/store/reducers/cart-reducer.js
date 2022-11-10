@@ -22,12 +22,6 @@ function cartReducer(state = initialState, action) {
       }
       return cart;
 
-    // case 'remove-from-cart':
-    //   return {
-    //     ...state,
-    //     itemsToPurchase: state.itemsToPurchase.filter(product => product !== payload),
-    //   }
-
       case 'remove-from-cart':
         let itemsInCart;
         let cartHasItem = false;
@@ -43,7 +37,6 @@ function cartReducer(state = initialState, action) {
             itemsToPurchase: itemsInCart,
             totalItems: state.totalItems - 1,
           }
-
 
     case 'reset':
       return initialState;

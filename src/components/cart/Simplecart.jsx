@@ -17,7 +17,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const SimpleCart = (props) => {
 
   const { removeItemFromCart, quantity } = props;
-  // let itemsToPurchase = useSelector(state => state.cartReducer.itemsToPurchase)
 
   const [open, setOpen] = React.useState(true);
 
@@ -31,7 +30,6 @@ const SimpleCart = (props) => {
         sx={{
           width: '100%',
           maxWidth: 360,
-          // bgcolor: 'background.paper' 
         }}
         component="nav"
         aria-labelledby="nested-list-subheader"
