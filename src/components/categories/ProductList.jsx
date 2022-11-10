@@ -1,5 +1,8 @@
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
+import {useEffect} from 'react';
+
 import { addItemToCart } from '../../store/reducers/cart-reducer';
+import {getProducts} from '../../store/reducers/product-reducer';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -12,6 +15,12 @@ import InfoIcon from '@mui/icons-material/Info';
 import Stack from '@mui/material/Stack';
 
 const List = (props) => {
+
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [])
 
   const { addItemToCart } = props;
 
@@ -65,7 +74,4 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);
-
-
-
 

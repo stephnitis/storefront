@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 let initialState = {
 
   products: [
@@ -23,6 +25,12 @@ function productReducer(state = initialState, action) {
         products: state.products.filter(product => product.category === payload),
         activeCategory: payload,
       }
+    
+    case 'get_products':
+      return{
+        ...state,
+        products: action.payload,
+      }
 
     case 'add-to-cart':
       let products = [...state.products];
@@ -41,6 +49,18 @@ function productReducer(state = initialState, action) {
     default:
       return state;
       
+  }
+}
+
+export const getProducts = () => async (dispatch, getState) => {
+  let response = await axios.get('https://api-js401.herokuapp.com/api/v1/products');
+  dispatch(setProducts(response.data.results));
+}
+
+export const setProducts = data => {
+  return {
+    type: 'get_products',
+    payload: data,
   }
 }
 
