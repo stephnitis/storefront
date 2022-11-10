@@ -28,12 +28,6 @@ function productReducer(state = initialState, action) {
       let products = [...state.products];
       let newProducts = products.map(product => product.name === payload.name ? {...product, inventory: product.inventory -= 1} : product)
       return {...state, products: newProducts};
-
-    // case 'remove':
-    //   return {
-    //     ...state,
-    //     itemsToPurchase: state.itemsToPurchase.filter(product => product !== payload),
-    //   }
     
     case 'remove-from-cart':
       let productInventory = [...state.products];
