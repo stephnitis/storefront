@@ -1,11 +1,13 @@
 import { Toolbar } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-// import { grey } from '@mui/material/colors';
+import SimpleCart from '../cart/Simplecart';
 
-const Header = () => {
+
+const Header = (props) => {
+
+
 
   return (
     <>
@@ -15,12 +17,15 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             OUR STORE
           </Typography>
-          <Button color="inherit">CART</Button>
+
+          <SimpleCart />
           </Toolbar>
         </AppBar>
       </Box>
     </>
   )
 }
+
+
 
 export default Header;
