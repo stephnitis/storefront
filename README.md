@@ -41,6 +41,8 @@
 - [React Redux](https://react-redux.js.org/)
 - [Redux DevTools](https://github.com/reduxjs/redux-devtools/tree/main/extension)
 - [MUI Core](https://mui.com/core/)
+- [Thunk](https://github.com/reduxjs/redux-thunk)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 
 ### Links
 
