@@ -54,7 +54,7 @@ const SimpleCart = (props) => {
 
               <List key={`item-${index}`} component="div" disablePadding>
                 <ListItemButton onClick={() => removeItemFromCart(item)} aria-label="delete" sx={{ pl: 4 }}>
-                  <ListItemText primary={item.name} />
+                  <ListItemText primary={item.name} secondary={item.qty} />
                   <ListItemIcon >
                     <DeleteOutlineIcon />
                   </ListItemIcon>
