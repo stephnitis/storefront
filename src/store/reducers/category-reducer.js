@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 let initialState = {
   categories: [
   { name: 'electronics', displayName: 'ELECTRONICS' },
@@ -17,12 +19,30 @@ let initialState = {
           activeCategory: payload,
         }
       
+      case 'get_categories':
+        return{
+          ...state,
+          categories: action.payload
+        }
+
       case 'reset':
-        return initialState;
+        return state;
   
       default:
-        return initialState;
+        return  state;
         
+    }
+  }
+
+  export const getCategories = () => async (dispatch, getState) => {
+    let response = await axios.get('https://api-js401.herokuapp.com/api/v1/categories');
+    dispatch(setCategories(response.data.results));
+  }
+
+  export const setCategories = (data) => {
+    return {
+      type: 'get_categories',
+      payload: data,
     }
   }
   
