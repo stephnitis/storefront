@@ -59,6 +59,7 @@ components: {
     h3: {
       fontWeight: 600,
       fontFamily: 'Montserrat',
+      display: 'flex'
     },
     h5: {
       fontWeight: 600,
