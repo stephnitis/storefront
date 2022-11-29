@@ -31,6 +31,7 @@ const List = (props) => {
     <>
       <Box
         display="flex"
+        alignSelf="center"
         justifyContent="center"
         alignItems="center"
         maxWidth="70vw"
@@ -41,6 +42,7 @@ const List = (props) => {
         <Grid
           container spacing={{ xs: 2, md: 3 }}
           // direction="column"
+          alignSelf="center"
           alignItems="center"
           justifyContent="center"
           style={{ minHeight: '100vh' }}
