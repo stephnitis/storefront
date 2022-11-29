@@ -34,18 +34,19 @@ const List = (props) => {
         alignSelf="center"
         justifyContent="center"
         alignItems="center"
-        maxWidth="70vw"
-        minHeight="100vh"
+        maxWidth="90vh"
+        minHeight="20vh"
+        direction="column"
 
       // sx={{ flexGrow: 1 }}
       >
         <Grid
           container spacing={{ xs: 2, md: 3 }}
-          // direction="column"
+          maxWidth="90%"
           alignSelf="center"
           alignItems="center"
           justifyContent="center"
-          style={{ minHeight: '100vh' }}
+          style={{ maxHeight: '200vh' }}
           columns={{ xs: 4, sm: 8, md: 12 }}
           sx={{
             justifyContent: "center",
@@ -57,9 +58,13 @@ const List = (props) => {
                 sx={{
                   justifyContent: "center",
                 }}
-                item xs={4} sm={4} md={4}
+                item xs={4} sm={4} md={3}
                 key={index}>
-                <Card sx={{ maxWidth: 345 }} key={`product-${index}`}>
+                <Card
+                sx={{
+                  height: '20vh'
+                }}
+                key={`product-${index}`}>
 
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">

@@ -4,7 +4,8 @@ import Typography from '@mui/material/Typography';
 import { connect, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getCategories, filterCategory } from '../../store/reducers/category-reducer';
-
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 
 const Categories = (props) => {
 
@@ -18,16 +19,28 @@ const Categories = (props) => {
 
   return (
     <>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-        Browse our Categories
-      </Typography>
-    {
-      props.categories.map((category, index) => (
-      <ButtonGroup key={`category-${index}`} variant="text" aria-label="text button group">
-        <Button onClick={() => filterCategory(category.name)}>{category.name}</Button>
-      </ButtonGroup>
-      ))
-    }
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        maxWidth="100%"
+        minHeight="10vh"
+      >
+        <Typography
+          variant="h6">
+          Browse our Categories
+        </Typography>
+        <Stack direction="row">
+          {
+            props.categories.map((category, index) => (
+              <ButtonGroup key={`category-${index}`} variant="text" aria-label="text button group">
+                <Button onClick={() => filterCategory(category.name)}>{category.name}</Button>
+              </ButtonGroup>
+            ))
+          }
+        </Stack>
+      </Box>
     </>
   )
 }

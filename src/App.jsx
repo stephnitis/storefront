@@ -3,8 +3,28 @@ import ProductList from './components/categories/ProductList';
 import Header from './components/header/index';
 import './App.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import 'normalize.css';
 
 export const theme = createTheme({
+components: {
+  MuiGrid: {
+    styleOverrides:{
+      root: {
+        display: 'flex',
+        alignSelf: 'center'
+      }
+    }
+  },
+  MuiBox: {
+    styleOverrides:{
+      root: {
+        display: 'flex',
+        alignSelf: 'center',
+        alignContent: 'center',
+      }
+    }
+  }
+},
   palette: {
     type: 'light',
     primary: {

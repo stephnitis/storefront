@@ -30,14 +30,14 @@ const SimpleCart = (props) => {
         sx={{
           width: '100%',
           maxWidth: 360,
-          color: 'secondary.light'
+          color: 'primary.light'
         }}
         component="nav"
         aria-labelledby="nested-list-subheader"
         subheader={
           <ListSubheader
             sx={{
-              color: 'secondary.light'
+              color: 'primary.light'
             }}
             component="div"
             id="nested-list-subheader">
@@ -48,19 +48,19 @@ const SimpleCart = (props) => {
         <ListItemButton
           onClick={handleClick}
           sx={{
-            color: 'secondary.light'
+            color: 'primary.light'
           }}
         >
           <ListItemIcon
             sx={{
-              color: 'secondary.light'
+              color: 'primary.light'
             }}>
             <ShoppingCartIcon />
           </ListItemIcon>
 
           <ListItemText
             sx={{
-              color: 'secondary.light'
+              color: 'primary.light'
             }}
             primary={quantity} />
           {open ? <ExpandLess /> : <ExpandMore />}
@@ -75,24 +75,24 @@ const SimpleCart = (props) => {
                   onClick={() => removeItemFromCart(item)}
                   aria-label="delete"
                   sx={{
-                    color: 'secondary.light',
+                    color: 'primary.light',
                     pl: 4
                   }}>
                   <ListItemText
                     sx={{
-                      color: 'secondary.light'
+                      color: 'primary.light'
                     }}
                     primary={item.name} 
                   />
                   <ListItemText
                     sx={{
-                      color: 'secondary.light'
+                      color: 'primary.light'
                     }}
                     primary={item.qty}
                   />
                   <ListItemIcon
                     sx={{
-                      color: 'secondary.light'
+                      color: 'primary.light'
                     }} >
                     <DeleteOutlineIcon />
                   </ListItemIcon>
