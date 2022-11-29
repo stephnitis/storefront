@@ -51,3 +51,5 @@
 ### References
 
 - [Demo Code](https://github.com/codefellows/seattle-code-javascript-401d48/tree/main/class-36)
+- [20 Best Fonts For Ecommerce Businesses](https://rocketium.com/academy/20-best-fonts-for-ecommerce-businesses/)
+- [6 Colors That Are Proven to Boost Sales](https://www.crazyegg.com/blog/colors-proven-to-boost-sales/)
