@@ -11,10 +11,20 @@ const Header = (props) => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box 
+      width="80%"
+      alignItems="center"
+      >
         <AppBar position="static">
           <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography 
+          variant="h3" 
+          minHeight="5vw"
+          alignItems="center"
+          sx={{ 
+            verticalAlign: "middle",
+            flexGrow: 1 }}
+          >
             OUR STORE
           </Typography>
 

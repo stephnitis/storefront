@@ -24,12 +24,25 @@
 
 ![uml lab 37](./assets/lab37.png)
 
+### Additional Functionality
+
+- New reducer in the Store to handle items in cart
+- When user adds item to cart, the combined reducers update the quantity in the cart as well as the inventory of the specified item accordingly
+- When item removes item, state (both in cart and inventory) is updated accordingly based on product removed from cart
+- Cart items are displayed via a dropdown list rendered in a new component called Simple Cart
+
+## Phase Three
+
+### Branch: thunk
+
 ### Dependencies
 
 - [Redux](https://redux.js.org/)
 - [React Redux](https://react-redux.js.org/)
 - [Redux DevTools](https://github.com/reduxjs/redux-devtools/tree/main/extension)
 - [MUI Core](https://mui.com/core/)
+- [Thunk](https://github.com/reduxjs/redux-thunk)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 
 ### Links
 
@@ -38,3 +51,5 @@
 ### References
 
 - [Demo Code](https://github.com/codefellows/seattle-code-javascript-401d48/tree/main/class-36)
+- [20 Best Fonts For Ecommerce Businesses](https://rocketium.com/academy/20-best-fonts-for-ecommerce-businesses/)
+- [6 Colors That Are Proven to Boost Sales](https://www.crazyegg.com/blog/colors-proven-to-boost-sales/)

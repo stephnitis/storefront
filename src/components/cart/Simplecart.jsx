@@ -30,20 +30,38 @@ const SimpleCart = (props) => {
         sx={{
           width: '100%',
           maxWidth: 360,
+          color: 'primary.light'
         }}
         component="nav"
         aria-labelledby="nested-list-subheader"
         subheader={
-          <ListSubheader component="div" id="nested-list-subheader"></ListSubheader>
+          <ListSubheader
+            sx={{
+              color: 'primary.light'
+            }}
+            component="div"
+            id="nested-list-subheader">
+          </ListSubheader>
         }
       >
 
-        <ListItemButton onClick={handleClick}>
-          <ListItemIcon>
+        <ListItemButton
+          onClick={handleClick}
+          sx={{
+            color: 'primary.light'
+          }}
+        >
+          <ListItemIcon
+            sx={{
+              color: 'primary.light'
+            }}>
             <ShoppingCartIcon />
           </ListItemIcon>
 
           <ListItemText
+            sx={{
+              color: 'primary.light'
+            }}
             primary={quantity} />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
@@ -53,9 +71,29 @@ const SimpleCart = (props) => {
             props.cart.itemsToPurchase.map((item, index) => (
 
               <List key={`item-${index}`} component="div" disablePadding>
-                <ListItemButton onClick={() => removeItemFromCart(item)} aria-label="delete" sx={{ pl: 4 }}>
-                  <ListItemText primary={item.name} secondary={item.qty} />
-                  <ListItemIcon >
+                <ListItemButton
+                  onClick={() => removeItemFromCart(item)}
+                  aria-label="delete"
+                  sx={{
+                    color: 'primary.light',
+                    pl: 4
+                  }}>
+                  <ListItemText
+                    sx={{
+                      color: 'primary.light'
+                    }}
+                    primary={item.name} 
+                  />
+                  <ListItemText
+                    sx={{
+                      color: 'primary.light'
+                    }}
+                    primary={item.qty}
+                  />
+                  <ListItemIcon
+                    sx={{
+                      color: 'primary.light'
+                    }} >
                     <DeleteOutlineIcon />
                   </ListItemIcon>
                 </ListItemButton>
